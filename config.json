@@ -85,22 +85,7 @@
       "type": "v2rayGeoIPDat",
       "action": "output",
       "args": {
-        "outputName": "geoip.dat"
-      }
-    },
-    {
-      "type": "v2rayGeoIPDat",
-      "action": "output",
-      "args": {
-        "outputName": "geoip-only-cn-private.dat",
-        "wantedList": ["cn", "private"]
-      }
-    },
-    {
-      "type": "v2rayGeoIPDat",
-      "action": "output",
-      "args": {
-        "outputName": "geoip-asn.dat",
+        "outputName": "GeoIP.dat",
         "wantedList": [
           "cloudflare",
           "cloudfront",
@@ -129,31 +114,6 @@
         "overwriteList": [
           "cn",
           "private",
-          "cloudflare",
-          "cloudfront",
-          "facebook",
-          "fastly",
-          "google",
-          "netflix",
-          "telegram",
-          "twitter"
-        ]
-      }
-    },
-    {
-      "type": "maxmindMMDB",
-      "action": "output",
-      "args": {
-        "outputName": "Country-only-cn-private.mmdb",
-        "wantedList": ["cn", "private"]
-      }
-    },
-    {
-      "type": "maxmindMMDB",
-      "action": "output",
-      "args": {
-        "outputName": "Country-asn.mmdb",
-        "wantedList": [
           "cloudflare",
           "cloudfront",
           "facebook",
