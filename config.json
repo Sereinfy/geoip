@@ -87,6 +87,8 @@
       "args": {
         "outputName": "GeoIP.dat",
         "wantedList": [
+          "cn",
+          "private",
           "cloudflare",
           "cloudfront",
           "facebook",
@@ -96,14 +98,6 @@
           "telegram",
           "twitter"
         ]
-      }
-    },
-    {
-      "type": "v2rayGeoIPDat",
-      "action": "output",
-      "args": {
-        "oneFilePerList": true,
-        "wantedList": ["cn", "private"]
       }
     },
     {
