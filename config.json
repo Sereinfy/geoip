@@ -22,26 +22,8 @@
       "action": "add",
       "args": {
         "name": "cn",
-        "uri": "https://raw.githubusercontent.com/17mon/china_ip_list/master/china_ip_list.txt",
+        "uri": "https://raw.githubusercontent.com/Sereinfy/china_ip_list/main/china_ip_list.txt",
         "onlyIPType": "ipv4"
-      }
-    },
-    {
-      "type": "text",
-      "action": "add",
-      "args": {
-        "name": "cn",
-        "uri": "https://raw.githubusercontent.com/gaoyifan/china-operator-ip/ip-lists/china.txt",
-        "onlyIPType": "ipv4"
-      }
-    },
-    {
-      "type": "text",
-      "action": "add",
-      "args": {
-        "name": "cn",
-        "uri": "https://raw.githubusercontent.com/gaoyifan/china-operator-ip/ip-lists/china6.txt",
-        "onlyIPType": "ipv6"
       }
     },
     {
@@ -177,14 +159,6 @@
       "action": "output",
       "args": {
         "outputDir": "./output",
-        "outputName": "geoip.dat"
-      }
-    },
-    {
-      "type": "v2rayGeoIPDat",
-      "action": "output",
-      "args": {
-        "outputDir": "./output",
         "outputName": "geoip-only-cn-private.dat",
         "wantedList": ["cn", "private"]
       }
@@ -194,8 +168,10 @@
       "action": "output",
       "args": {
         "outputDir": "./output",
-        "outputName": "geoip-asn.dat",
+        "outputName": "GeoIP.dat",
         "wantedList": [
+          "cn",
+          "private",
           "cloudflare",
           "cloudfront",
           "facebook",
@@ -250,24 +226,6 @@
         "outputDir": "./output",
         "outputName": "Country-only-cn-private.mmdb",
         "wantedList": ["cn", "private"]
-      }
-    },
-    {
-      "type": "maxmindMMDB",
-      "action": "output",
-      "args": {
-        "outputDir": "./output",
-        "outputName": "Country-asn.mmdb",
-        "wantedList": [
-          "cloudflare",
-          "cloudfront",
-          "facebook",
-          "fastly",
-          "google",
-          "netflix",
-          "telegram",
-          "twitter"
-        ]
       }
     },
     {
