@@ -183,13 +183,12 @@
         ]
       }
     },
-    {
+        {
       "type": "v2rayGeoIPDat",
       "action": "output",
       "args": {
-        "outputDir": "./output",
-        "oneFilePerList": true,
-        "wantedList": ["cn", "private"]
+        "oneFilePerList": true
+        "wantedList": ["cn"]
       }
     },
     {
