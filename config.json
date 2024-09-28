@@ -188,7 +188,6 @@
       "action": "output",
       "args": {
         "oneFilePerList": true
-        "wantedList": ["cn"]
       }
     },
     {
