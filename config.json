@@ -193,13 +193,6 @@
       }
     },
     {
-      "type": "v2rayGeoIPDat",
-      "action": "output",
-      "args": {
-        "oneFilePerList": true
-      }
-    },
-    {
       "type": "maxmindMMDB",
       "action": "output",
       "args": {
