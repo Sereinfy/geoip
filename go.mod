@@ -1,6 +1,6 @@
 module geoip
 
-go 1.23.2
+go 1.23.3
 
 require (
 	github.com/Loyalsoldier/geoip v0.0.0-20241104153047-be06655e8594
@@ -25,9 +25,9 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
 	github.com/tidwall/pretty v1.2.1 // indirect
-	golang.org/x/mod v0.21.0 // indirect
+	golang.org/x/mod v0.22.0 // indirect
 	golang.org/x/net v0.30.0 // indirect
-	golang.org/x/sync v0.8.0 // indirect
-	golang.org/x/sys v0.26.0 // indirect
+	golang.org/x/sync v0.9.0 // indirect
+	golang.org/x/sys v0.27.0 // indirect
 	golang.org/x/tools v0.26.0 // indirect
 )
