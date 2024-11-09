@@ -40,10 +40,13 @@ jobs:
           curl -sSL ${private} | grep -E '\/[^A-Za-z]+\/' | awk -F'[/:]' '{print $4}' >> ./data/private
           curl -sSL ${private} | grep '::' | awk -F'[][]' '{print $2}' >> ./data/private
 
-      - name: Generate cn
+      - name: Generate cn and cn_ip
         run: |
-          curl -SSL ${cn} | awk -F '|' '/CN/&&/ipv4/ {print $4 "/" 32-log($5)/log(2)}' >> ./data/cn
-          curl -SSL ${cn} | awk -F '|' '/CN/&&/ipv6/ {print $4 "/" $5}' >> ./data/cn
+          midir -p./ips/
+          curl -sSL ${cn} | awk -F '|' '/CN/&&/ipv4/ {print $4 "/" 32-log($5)/log(2)}' > ./ips/cn_ipv4.txt
+          cat ./ips/cn_ipv4.txt >> ./data/cn
+          curl -sSL ${cn} | awk -F '|' '/CN/&&/ipv6/ {print $4 "/" $5}' > ./ips/cn_ipv6.txt
+          cat ./ips/cn_ipv6.txt >> ./data/cn
 
       - name: Get GeoLite2
         env:
@@ -103,7 +106,7 @@ jobs:
 
       - name: Move and generate files to branchs
         run: |
-          mkdir -p ./tmp/ ./ips/
+          mkdir -p ./tmp/
           mv -f ./output/Country*.mmdb ./clash/
           curl -sSL ${cn_asn} | grep -v '#' | sed 's/,no-resolve$//' > ./tmp/cn.list
           for file in $(ls ./output/clash/classical/ | sed 's/\..*//'); do
@@ -111,8 +114,6 @@ jobs:
             grep "\"${file}\":" ./config.json | awk -F'[][]' '{print $2}' | awk -F', ' '{for(i=1;i<=NF;i++){gsub(/"/, "", $i); gsub(/AS/, "", $i); print "IP-ASN,"$i}}' >> "./tmp/${file}.list"
             sort --ignore-case -u "./tmp/${file}.list" > "./ips/${file}ip.list"
           done
-          curl -SSL ${cn} | awk -F '|' '/CN/&&/ipv4/ {print $4 "/" 32-log($5)/log(2)}' > ./ips/cn_ipv4.txt
-          curl -SSL ${cn} | awk -F '|' '/CN/&&/ipv6/ {print $4 "/" $5}' > ./ips/cn_ipv6.txt
           rm -rf ./tmp* ./output*
 
       - name: Release and upload `ips` assets
