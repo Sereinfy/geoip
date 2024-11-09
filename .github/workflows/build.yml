@@ -42,7 +42,7 @@ jobs:
 
       - name: Generate cn and cn_ip
         run: |
-          midir -p./ips/
+          mkdir -p./ips/
           curl -sSL ${cn} | awk -F '|' '/CN/&&/ipv4/ {print $4 "/" 32-log($5)/log(2)}' > ./ips/cn_ipv4.txt
           cat ./ips/cn_ipv4.txt >> ./data/cn
           curl -sSL ${cn} | awk -F '|' '/CN/&&/ipv6/ {print $4 "/" $5}' > ./ips/cn_ipv6.txt
