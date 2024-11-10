@@ -170,7 +170,7 @@
           ],
           "netflix": ["AS55095", "AS40027", "AS394406", "AS2906"],
           "telegram": ["AS62041", "AS62014", "AS59930", "AS44907", "AS211157"],
-          "bbq": ["AS8945", "AS63179", "AS54888", "AS35995", "AS13414"]
+          "twitter": ["AS8945", "AS63179", "AS54888", "AS35995", "AS13414"]
         }
       }
     },
@@ -196,7 +196,7 @@
           "google",
           "netflix",
           "telegram",
-          "bbq"
+          "twitter"
         ]
       }
     },
@@ -243,7 +243,7 @@
           "google",
           "netflix",
           "telegram",
-          "bbq"
+          "twitter"
         ]
       }
     },
