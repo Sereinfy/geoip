@@ -204,15 +204,6 @@
       "type": "v2rayGeoIPDat",
       "action": "output",
       "args": {
-        "outputDir": "./output",
-        "outputName": "geoip-lite.dat",
-        "wantedList": ["telegram", "private", "cn"]
-      }
-    },
-    {
-      "type": "v2rayGeoIPDat",
-      "action": "output",
-      "args": {
         "oneFilePerList": true
       }
     },
