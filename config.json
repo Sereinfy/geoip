@@ -221,16 +221,6 @@
       "action": "output",
       "args": {
         "outputDir": "./output",
-        "outputName": "Country-lite.mmdb",
-        "sourceMMDBURI": "./output/GeoLite2-Country.mmdb",
-        "wantedList": ["telegram", "private", "cn"]
-      }
-    },
-    {
-      "type": "maxmindMMDB",
-      "action": "output",
-      "args": {
-        "outputDir": "./output",
         "outputName": "Country.mmdb",
         "sourceMMDBURI": "./output/GeoLite2-Country.mmdb",
         "overwriteList": [
@@ -245,15 +235,6 @@
           "telegram",
           "twitter"
         ]
-      }
-    },
-    {
-      "type": "maxmindMMDB",
-      "action": "output",
-      "args": {
-        "outputDir": "./output",
-        "outputName": "Country-ASN.mmdb",
-        "wantedList": ["netflix", "telegram"]
       }
     },
     {
