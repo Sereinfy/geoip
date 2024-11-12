@@ -82,7 +82,7 @@ jobs:
         run: |
           curl -o ./output/geoip-all.dat -L https://raw.githubusercontent.com/Loyalsoldier/geoip/release/geoip.dat
           curl -o ./output/Country-all.mmdb -L https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb
-          curl -o ./output/Country-ASN-all.mmdb -L https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country-asn.mmdb
+          curl -o ./output/ASN.mmdb -L https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country-asn.mmdb
 
       - name: Build db and metadb file
         run: |
