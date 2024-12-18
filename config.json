@@ -15,16 +15,7 @@
       "action": "add",
       "args": {
         "name": "cn",
-        "uri": "https://raw.githubusercontent.com/17mon/china_ip_list/master/china_ip_list.txt",
-        "onlyIPType": "ipv4"
-      }
-    },
-    {
-      "type": "text",
-      "action": "add",
-      "args": {
-        "name": "cn",
-        "uri": "https://raw.githubusercontent.com/gaoyifan/china-operator-ip/ip-lists/china.txt",
+        "uri": "https://raw.githubusercontent.com/Sereinfy/china_ip_list/refs/heads/main/china_ip_list.txt",
         "onlyIPType": "ipv4"
       }
     },
@@ -51,6 +42,22 @@
       "args": {
         "name": "telegram",
         "uri": "https://core.telegram.org/resources/cidr.txt"
+      }
+    },
+        {
+      "type": "text",
+      "action": "add",
+      "args": {
+        "name": "cloudflare",
+        "uri": "https://www.cloudflare.com/ips-v4"
+      }
+    },
+    {
+      "type": "text",
+      "action": "add",
+      "args": {
+        "name": "cloudflare",
+        "uri": "https://www.cloudflare.com/ips-v6"
       }
     },
     {
@@ -84,16 +91,7 @@
       "args": {
         "outputDir": "./output",
         "outputName": "geoip.dat",
-        "wantedList": ["netflix", "telegram", "private", "cn"]
-      }
-    },
-    {
-      "type": "v2rayGeoIPDat",
-      "action": "output",
-      "args": {
-        "outputDir": "./output",
-        "outputName": "geoip-lite.dat",
-        "wantedList": ["telegram", "private", "cn"]
+        "wantedList": ["cloudflare", "netflix", "telegram", "private", "cn"]
       }
     },
     {
@@ -108,28 +106,9 @@
       "action": "output",
       "args": {
         "outputDir": "./output",
-        "outputName": "Country-lite.mmdb",
-        "sourceMMDBURI": "./output/GeoLite2-Country.mmdb",
-        "wantedList": ["telegram", "private", "cn"]
-      }
-    },
-    {
-      "type": "maxmindMMDB",
-      "action": "output",
-      "args": {
-        "outputDir": "./output",
         "outputName": "Country.mmdb",
         "sourceMMDBURI": "./output/GeoLite2-Country.mmdb",
-        "wantedList": ["netflix", "telegram", "private", "cn"]
-      }
-    },
-    {
-      "type": "maxmindMMDB",
-      "action": "output",
-      "args": {
-        "outputDir": "./output",
-        "outputName": "Country-ASN.mmdb",
-        "wantedList": ["netflix", "telegram"]
+        "wantedList": ["cloudflare", "netflix", "telegram", "private", "cn"]
       }
     },
     {
